@@ -21,6 +21,6 @@ class Waiter
   end
 
   def best_tipper
-
+    Customer.all.find {|tip| tip.max}
   end
 end
