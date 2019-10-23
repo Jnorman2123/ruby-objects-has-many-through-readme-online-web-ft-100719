@@ -21,6 +21,8 @@ class Waiter
   end
 
   def best_tipper
-    Customer.all.find {|tip| tip.max}
+    best_tipped_meal = self.meals.max do |meal_a, meal_b|
+      meal_a.tip <=> meal_b.tip
+    end
   end
 end
